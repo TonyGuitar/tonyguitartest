@@ -8,3 +8,40 @@ line 7
 line 8
 line 9
 line 10
+TonyVT just added the following code:
+Beatles: 
+Load * inline [
+Name; 	Instrument; Comment
+John;	Vocals, rhythm guitar, harmonica; Comment text
+Paul;	Vocals, bass guitar, guitar; Comment text
+George; Vocals, lead guitar, rhythm guitar; Comment text
+Ringo;	Vocal, drums, percussion; Comment text
+](delimiter is ';');
+
+RegionSales: 
+LOAD *,
+AutoNumber(Region&Year&Month) as RYMkey;
+
+LOAD * INLINE
+[ Region, Year, Month, Sales
+North,	2014,	May,	245
+North,	2014,	May,	347
+North,	2014,	June,	127
+South,	2014,	June,	645
+South,	2013,	May, 367
+South,	2013,	May,	221
+];
+
+SymbolTable:
+load * Inline [
+	First Name
+	John
+	Peter
+	John
+	Mike
+	Claudia
+	Helen
+	Elena
+	Suzuki
+];
+/// end of code that TonyVT added
